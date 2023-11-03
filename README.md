@@ -32,10 +32,10 @@ archyn.com.tr is a stunning and modern portfolio website developed using Svelte 
 
 ## Installation
 To run archyn.com.tr locally, follow these steps:
-1. Clone the repository: `git clone https://github.com/ISmillex/porfolio-website.git`
-2. Navigate to the project directory: `cd portfolio-website`
-3. Install the dependencies: `npm install`
-4. Start the development server: `npm run dev -- --host`
+1. Clone the repository: `git clone https://github.com/ISmillex/archyn.com.tr.git`
+2. Navigate to the project directory: `cd archyn.com.tr`
+3. Install the dependencies: `bun install`
+4. Start the development server: `bun run dev -- --host`
 5. Open your web browser and go to `http://localhost:5173` 
 
 ## How It Works
