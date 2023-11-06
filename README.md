@@ -1,6 +1,7 @@
 # Portfolio Website
 
 https://github.com/ISmillex/porfolio-website/assets/72645646/8a55d732-70e4-4299-90d5-db862f802f5c
+video sped up by 50%
 
 ## Table of Contents
 1. [Introduction](#introduction)
