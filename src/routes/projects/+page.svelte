@@ -81,7 +81,7 @@
                                     <div class="value">{project.role}</div>
                                     <div class="title">Categories</div>
                                     <div class="value">{project.category}</div>
-                                    <div class="title">Client</div>
+                                    <div class="title">ClientService</div>
                                     <div class="value">{project.client}</div>
                                     <div class="title">Date</div>
                                     <div class="value">{project.startDate} - {project.endDate}</div>

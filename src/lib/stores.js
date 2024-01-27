@@ -20,3 +20,13 @@ export const game2048 = writable({
     board: [],
     score: 0,
 })
+
+
+export const grovio = writable({
+    currentTrackData: {},
+    settings: {},
+    client: null,
+    api: null,
+    urlHandler: null,
+    isPlaying: false,
+});

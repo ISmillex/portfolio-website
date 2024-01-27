@@ -60,11 +60,16 @@
         "/grovio"
     ];
 
-
-
+    // let data = fetch("http://10.3.130.243:5173/etumobile/api/v1/get?query=SELECT * FROM STUDENT", {
+    //         headers: {
+    //             'x-api-key': 'AlkinOrospu'
+    //         }
+    // }).then(response => response.json())
+    //
+    // console.log(data)
 
     // let intervalId = setInterval(() => {
-    //     fetch("http://10.3.129.3:5173/etumobil/api/v1/database?function=create_database&args=HelloWorld", {
+    //     fetch("http://10.3.129.3:5173/etumobile/api/v1/database?function=create_database&args=HelloWorld", {
     //         headers: {
     //             'x-api-key': 'AlkinOrospu'
     //         }

@@ -1,6 +1,6 @@
 <script>
-    import Main from "../../grovio/main.svelte"
+    import App from "../../grovio/front/app.svelte"
 </script>
 
 
-<Main />
+<App />
