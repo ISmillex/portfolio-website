@@ -25,7 +25,14 @@ export const GET = async ({ request, url }) => {
 
     try {
         const data = await executeSqlQuery(query, params);
-        return successResponse(data);
+
+        const response = successResponse(data);
+
+        response.headers.set('Access-Control-Allow-Origin', 'https://archyn.com.tr/etumobile/api/v1/database');
+        response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+        response.headers.set('Access-Control-Allow-Headers', 'Content-Type');
+
+        return response;
     } catch (error) {
         return errorResponse(error);
     }
