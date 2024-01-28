@@ -20,7 +20,7 @@ export const OPTIONS = async ({ request, url }) => {
 
     const origin = request.headers.get('origin');
 
-    console.log('origin', origin);
+    console.log('origin-Options', origin);
 
     const allowedOrigins = ['http://localhost:5173', 'http://localhost:3000'];
     if (allowedOrigins.includes(origin)) {
@@ -37,6 +37,9 @@ export const OPTIONS = async ({ request, url }) => {
 export const GET = async ({ request, url }) => {
     const { query, params } = getQueryParams(url);
     const apiKeyHeader = request.headers.get('x-api-key');
+    const origin = request.headers.get('origin');
+
+    console.log('origin-Get', origin);
 
 
     if (!isAuthorized(apiKeyHeader)) {
@@ -46,7 +49,14 @@ export const GET = async ({ request, url }) => {
 
     try {
         const data = await executeSqlQuery(query, params);
-        return successResponse(data);
+        let response = successResponse(data);
+        const allowedOrigins = ['http://localhost:5173', 'http://localhost:3000'];
+        if (allowedOrigins.includes(origin)) {
+            response.headers.set('Access-Control-Allow-Origin', origin);
+        }
+        response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+        response.headers.set('Access-Control-Allow-Headers', 'Content-Type, x-api-key');
+        return response;
     } catch (error) {
         return errorResponse(error);
     }
