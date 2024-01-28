@@ -3,11 +3,9 @@ import Database from 'better-sqlite3';
 import {API_KEY} from '$env/static/private';
 
 const DB_PATHS = {
-    'darwin': '/Users/archyn/Programming/JavaScript/Svelte/porfolio-website/src/etumobile/database/ubs_database.db',
-    'linux': '/home/ubuntu/Programming/portfolio-website/src/etumobile/database/ubs_database.db'
+    'darwin': '/Users/archyn/Programming/JavaScript/Svelte/porfolio-website/src/etumobile/database/',
+    'linux': '/home/ubuntu/Programming/portfolio-website/src/etumobile/database/'
 };
-
-const DB_PATH = DB_PATHS[os.platform()];
 
 const ALLOWED_ORIGINS = ['http://localhost:5173', 'http://localhost:3000'];
 
@@ -26,7 +24,7 @@ export const OPTIONS = async ({ request }) => {
 };
 
 export const GET = async ({ request, url }) => {
-    const { query, params } = getQueryParams(url);
+    const { query, params ,database_name} = getQueryParams(url);
     const apiKeyHeader = request.headers.get('x-api-key');
     const origin = request.headers.get('origin');
 
@@ -35,7 +33,7 @@ export const GET = async ({ request, url }) => {
     }
 
     try {
-        const data = await executeSqlQuery(query, params);
+        const data = await executeSqlQuery(query, params, database_name);
         let response = successResponse(data);
 
         if (ALLOWED_ORIGINS.includes(origin)) {
@@ -51,7 +49,8 @@ export const GET = async ({ request, url }) => {
     }
 };
 
-function executeSqlQuery(query, params) {
+function executeSqlQuery(query, params, database_name) {
+    const DB_PATH = DB_PATHS[os.platform()] + database_name;
     const db = new Database(DB_PATH, { verbose: console.log });
     const stmnt = db.prepare(query);
     return stmnt.all(params);
@@ -60,9 +59,11 @@ function executeSqlQuery(query, params) {
 function getQueryParams(url) {
     const query = url.searchParams.get('query');
     const params = url.searchParams.get('params');
+    const database_name = url.searchParams.get('database_name');
     return {
         query: query,
-        params: params ? params.split(',') : []
+        params: params ? params.split(',') : [],
+        database_name: database_name
     };
 }
 
