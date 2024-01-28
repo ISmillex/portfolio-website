@@ -7,7 +7,7 @@ const DB_PATHS = {
     'linux': '/home/ubuntu/Programming/portfolio-website/src/etumobile/database/'
 };
 
-const ALLOWED_ORIGINS = ['http://localhost:5173', 'http://localhost:3000'];
+const ALLOWED_ORIGINS = ['http://localhost:5173','http://localhost:5174','http://localhost:3000'];
 
 export const OPTIONS = async ({ request }) => {
     const response = new Response(null);
@@ -32,6 +32,7 @@ export const GET = async ({ request, url }) => {
         return unauthorizedResponse();
     }
 
+    console.log(query, params, database_name)
     try {
         const data = await executeSqlQuery(query, params, database_name);
         let response = successResponse(data);
