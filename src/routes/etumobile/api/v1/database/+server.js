@@ -1,6 +1,6 @@
 import os from 'os';
 import Database from 'better-sqlite3';
-import { API_KEY } from '$env/static/private';
+import {API_KEY} from '$env/static/private';
 
 
 const DB_PATH_MAC = '/Users/archyn/Programming/JavaScript/Svelte/porfolio-website/src/etumobile/database/ubs_database.db';
@@ -15,10 +15,30 @@ if (os.platform() === 'darwin') {
 }
 
 
+export const OPTIONS = async ({ request, url }) => {
+    const response = new Response(null);
+
+    const origin = request.headers.get('origin');
+
+    console.log('origin', origin);
+
+    const allowedOrigins = ['http://localhost:5173', 'http://localhost:3000'];
+    if (allowedOrigins.includes(origin)) {
+        response.headers.set('Access-Control-Allow-Origin', origin);
+    }
+
+    response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    response.headers.set('Access-Control-Allow-Headers', 'Content-Type, x-api-key');
+
+    return response;
+};
+
+
 export const GET = async ({ request, url }) => {
     const { query, params } = getQueryParams(url);
     const apiKeyHeader = request.headers.get('x-api-key');
-    const origin = request.headers.get('origin');
+
+
 
     if (!isAuthorized(apiKeyHeader)) {
         return unauthorizedResponse();
@@ -26,9 +46,7 @@ export const GET = async ({ request, url }) => {
 
     try {
         const data = await executeSqlQuery(query, params);
-        let response = successResponse(data);
-        response = addCors(origin, response);
-        return response;
+        return successResponse(data);
     } catch (error) {
         return errorResponse(error);
     }
@@ -50,15 +68,6 @@ function getQueryParams(url) {
 }
 
 
-function addCors(origin, response) {
-    const allowedOrigins = ['http://localhost:5173', 'http://localhost:3000'];
-    if (allowedOrigins.includes(origin)) {
-        response.headers.set('Access-Control-Allow-Origin', origin);
-    }
-    response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-    response.headers.set('Access-Control-Allow-Headers', 'Content-Type, x-api-key');
-    return response;
-}
 function isAuthorized(apiKeyHeader) {
     return apiKeyHeader && apiKeyHeader === API_KEY;
 }

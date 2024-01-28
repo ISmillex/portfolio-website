@@ -18,9 +18,6 @@ export async function handle({ event, resolve }) {
             });
         }
 
-        // if (event.url.pathname.startsWith(PROXY_PATH)) {
-        //     return await handleApiProxy({ event, resolve });
-        // }
     }
     const response = await resolve(event);
     if (paths.some(path => event.url.pathname.startsWith(path))) {

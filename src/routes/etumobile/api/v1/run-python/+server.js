@@ -1,9 +1,29 @@
-import { spawn } from 'child_process';
-import { API_KEY } from '$env/static/private';
+import {spawn} from 'child_process';
+import {API_KEY} from '$env/static/private';
 
 const SCRIPT_MAP = {
     'create_database': 'create_database.py',
     'update_database': 'update_database.py',
+};
+
+
+
+export const OPTIONS = async ({ request, url }) => {
+    const response = new Response(null);
+
+    const origin = request.headers.get('origin');
+
+    console.log('origin', origin);
+
+    const allowedOrigins = ['http://localhost:5173', 'http://localhost:3000'];
+    if (allowedOrigins.includes(origin)) {
+        response.headers.set('Access-Control-Allow-Origin', origin);
+    }
+
+    response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    response.headers.set('Access-Control-Allow-Headers', 'Content-Type, x-api-key');
+
+    return response;
 };
 
 export const GET = async ({ request, url }) => {
@@ -19,10 +39,7 @@ export const GET = async ({ request, url }) => {
 
     try {
         const data = await runPythonScript(functionName, Object.values(args));
-        let response = successResponse(data);
-        response = addCors(origin, response);
-
-        return response;
+        return successResponse(data);
     } catch (error) {
         return errorResponse(error);
     }
@@ -54,16 +71,6 @@ function runPythonScript(taskName, args = []) {
     });
 }
 
-
-function addCors(origin, response) {
-    const allowedOrigins = ['http://localhost:5173', 'http://localhost:3000'];
-    if (allowedOrigins.includes(origin)) {
-        response.headers.set('Access-Control-Allow-Origin', origin);
-    }
-    response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-    response.headers.set('Access-Control-Allow-Headers', 'Content-Type, x-api-key');
-    return response;
-}
 
 function isValidApiKey(apiKeyHeader) {
     return apiKeyHeader && apiKeyHeader === API_KEY;
