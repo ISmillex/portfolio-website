@@ -1,64 +1,69 @@
-import { config } from 'dotenv';
-import { spawn } from 'child_process';
+import os from 'os';
+import Database from 'better-sqlite3';
+import { API_KEY } from '$env/static/private';
 
-config();
 
-const API_KEY = process.env.API_KEY;
+const DB_PATH_MAC = '/Users/archyn/Programming/JavaScript/Svelte/porfolio-website/src/etumobile/database/ubs_database.db';
+const DB_PATH_LINUX = '/home/ubuntu/Programming/portfolio-website/src/etumobile/database/ubs_database.db';
+
+let DB_PATH;
+
+if (os.platform() === 'darwin') {
+    DB_PATH = DB_PATH_MAC;
+} else if (os.platform() === 'linux') {
+    DB_PATH = DB_PATH_LINUX;
+}
+
 
 export const GET = async ({ request, url }) => {
-
+    const { query, params } = getQueryParams(url);
     const apiKeyHeader = request.headers.get('x-api-key');
 
-    const functionName = url.searchParams.get('function') ;
-    const args = url.searchParams.get('args') ?? []
-
-    if (!apiKeyHeader || apiKeyHeader !== API_KEY) {
-        return new Response(JSON.stringify({
-            message: 'Unauthorized'
-        }), { status: 401 });
+    if (!isAuthorized(apiKeyHeader)) {
+        return unauthorizedResponse();
     }
 
     try {
-        const data = await runPythonScript(functionName, Object.values(args));
-        return new Response(JSON.stringify({
-                message: 'Python script executed successfully',
-                data: data
-            }),{ status: 200});
+        const data = await executeSqlQuery(query, params);
+        return successResponse(data);
     } catch (error) {
-        return new Response(JSON.stringify({
-            message: 'An error occurred while executing the Python script',
-            error: error
-        }), { status: 500 });
+        return errorResponse(error);
     }
 };
 
-function runPythonScript(taskName, args = []) {
-    const scriptMap = {
-        'create_database': 'create_database.py',
-        'update_database': 'update_database.py',
-    };
-
-    const scriptName = scriptMap[taskName];
-    const scriptPath = `./src/etumobil/${scriptName}`;
-
-    if (!scriptName) {
-        throw new Error(`Invalid task name: ${taskName}`);
-    }
-
-    return new Promise((resolve, reject) => {
-        const python = spawn(scriptPath, [...args]);
-        let dataToSend = "";
-
-        python.stdout.on('data', (data) => {
-            dataToSend += data.toString();
-        });
-
-        python.stderr.on('data', (data) => {
-            reject(data.toString());
-        });
-
-        python.on('close', (code) => {
-            resolve(dataToSend);
-        });
-    });
+function executeSqlQuery(query, params) {
+    const db = new Database(DB_PATH, { verbose: console.log });
+    const stmnt = db.prepare(query);
+    return stmnt.all(params);
 }
+
+function getQueryParams(url) {
+    const query = url.searchParams.get('query');
+    const params = url.searchParams.get('params');
+    return {
+        query: query,
+        params: params ? params.split(',') : []
+    };
+}
+
+function isAuthorized(apiKeyHeader) {
+    return apiKeyHeader && apiKeyHeader === API_KEY;
+}
+
+function jsonResponse(body, status) {
+    return new Response(JSON.stringify(body), { status });
+}
+
+function unauthorizedResponse() {
+    return jsonResponse({ message: 'Unauthorized' }, 401);
+}
+
+function successResponse(data) {
+    return jsonResponse({ message: 'Sql query executed successfully', data }, 200);
+}
+
+function errorResponse(error) {
+    return jsonResponse({ message: 'An error occurred while executing sql query', error }, 500);
+}
+
+
