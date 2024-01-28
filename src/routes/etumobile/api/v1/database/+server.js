@@ -39,8 +39,8 @@ export const GET = async ({ request, url }) => {
     const apiKeyHeader = request.headers.get('x-api-key');
 
 
-
     if (!isAuthorized(apiKeyHeader)) {
+        console.log('unauthorized')
         return unauthorizedResponse();
     }
 
@@ -69,6 +69,7 @@ function getQueryParams(url) {
 
 
 function isAuthorized(apiKeyHeader) {
+    console.log(apiKeyHeader, API_KEY)
     return apiKeyHeader && apiKeyHeader === API_KEY;
 }
 
