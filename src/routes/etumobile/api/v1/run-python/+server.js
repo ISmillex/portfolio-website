@@ -6,17 +6,13 @@ const SCRIPT_MAP = {
     'update_database': 'update_database.py',
 };
 
+const ALLOWED_ORIGINS = ['http://localhost:5173', 'http://localhost:3000'];
 
-
-export const OPTIONS = async ({ request, url }) => {
+export const OPTIONS = async ({ request }) => {
     const response = new Response(null);
-
     const origin = request.headers.get('origin');
 
-    console.log('origin', origin);
-
-    const allowedOrigins = ['http://localhost:5173', 'http://localhost:3000'];
-    if (allowedOrigins.includes(origin)) {
+    if (ALLOWED_ORIGINS.includes(origin)) {
         response.headers.set('Access-Control-Allow-Origin', origin);
     }
 
@@ -39,7 +35,16 @@ export const GET = async ({ request, url }) => {
 
     try {
         const data = await runPythonScript(functionName, Object.values(args));
-        return successResponse(data);
+        let response = successResponse(data);
+
+        if (ALLOWED_ORIGINS.includes(origin)) {
+            response.headers.set('Access-Control-Allow-Origin', origin);
+        }
+
+        response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+        response.headers.set('Access-Control-Allow-Headers', 'Content-Type, x-api-key');
+
+        return response;
     } catch (error) {
         return errorResponse(error);
     }

@@ -2,28 +2,20 @@ import os from 'os';
 import Database from 'better-sqlite3';
 import {API_KEY} from '$env/static/private';
 
+const DB_PATHS = {
+    'darwin': '/Users/archyn/Programming/JavaScript/Svelte/porfolio-website/src/etumobile/database/ubs_database.db',
+    'linux': '/home/ubuntu/Programming/portfolio-website/src/etumobile/database/ubs_database.db'
+};
 
-const DB_PATH_MAC = '/Users/archyn/Programming/JavaScript/Svelte/porfolio-website/src/etumobile/database/ubs_database.db';
-const DB_PATH_LINUX = '/home/ubuntu/Programming/portfolio-website/src/etumobile/database/ubs_database.db';
+const DB_PATH = DB_PATHS[os.platform()];
 
-let DB_PATH;
+const ALLOWED_ORIGINS = ['http://localhost:5173', 'http://localhost:3000'];
 
-if (os.platform() === 'darwin') {
-    DB_PATH = DB_PATH_MAC;
-} else if (os.platform() === 'linux') {
-    DB_PATH = DB_PATH_LINUX;
-}
-
-
-export const OPTIONS = async ({ request, url }) => {
+export const OPTIONS = async ({ request }) => {
     const response = new Response(null);
-
     const origin = request.headers.get('origin');
 
-    console.log('origin-Options', origin);
-
-    const allowedOrigins = ['http://localhost:5173', 'http://localhost:3000'];
-    if (allowedOrigins.includes(origin)) {
+    if (ALLOWED_ORIGINS.includes(origin)) {
         response.headers.set('Access-Control-Allow-Origin', origin);
     }
 
@@ -33,29 +25,26 @@ export const OPTIONS = async ({ request, url }) => {
     return response;
 };
 
-
 export const GET = async ({ request, url }) => {
     const { query, params } = getQueryParams(url);
     const apiKeyHeader = request.headers.get('x-api-key');
     const origin = request.headers.get('origin');
 
-    console.log('origin-Get', origin);
-
-
     if (!isAuthorized(apiKeyHeader)) {
-        console.log('unauthorized')
         return unauthorizedResponse();
     }
 
     try {
         const data = await executeSqlQuery(query, params);
         let response = successResponse(data);
-        const allowedOrigins = ['http://localhost:5173', 'http://localhost:3000'];
-        if (allowedOrigins.includes(origin)) {
+
+        if (ALLOWED_ORIGINS.includes(origin)) {
             response.headers.set('Access-Control-Allow-Origin', origin);
         }
+
         response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
         response.headers.set('Access-Control-Allow-Headers', 'Content-Type, x-api-key');
+
         return response;
     } catch (error) {
         return errorResponse(error);
@@ -77,9 +66,7 @@ function getQueryParams(url) {
     };
 }
 
-
 function isAuthorized(apiKeyHeader) {
-    console.log(apiKeyHeader, API_KEY)
     return apiKeyHeader && apiKeyHeader === API_KEY;
 }
 
@@ -98,5 +85,3 @@ function successResponse(data) {
 function errorResponse(error) {
     return jsonResponse({ message: 'An error occurred while executing sql query', error }, 500);
 }
-
-
