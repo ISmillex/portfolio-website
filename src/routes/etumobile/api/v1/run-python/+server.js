@@ -10,6 +10,8 @@ export const GET = async ({ request, url }) => {
     const apiKeyHeader = request.headers.get('x-api-key');
     const functionName = url.searchParams.get('function');
     const args = url.searchParams.get('args') ?? [];
+    const origin = request.headers.get('origin');
+
 
     if (!isValidApiKey(apiKeyHeader)) {
         return unauthorizedResponse();
@@ -17,11 +19,8 @@ export const GET = async ({ request, url }) => {
 
     try {
         const data = await runPythonScript(functionName, Object.values(args));
-        const response = successResponse(data);
-
-        response.headers.set('Access-Control-Allow-Origin', 'https://archyn.com.tr/etumobile/api/v1/run-python');
-        response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-        response.headers.set('Access-Control-Allow-Headers', 'Content-Type');
+        let response = successResponse(data);
+        response = addCors(origin, response);
 
         return response;
     } catch (error) {
@@ -53,6 +52,17 @@ function runPythonScript(taskName, args = []) {
             resolve(dataToSend);
         });
     });
+}
+
+
+function addCors(origin, response) {
+    const allowedOrigins = ['http://localhost:5173', 'http://localhost:3000'];
+    if (allowedOrigins.includes(origin)) {
+        response.headers.set('Access-Control-Allow-Origin', origin);
+    }
+    response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    response.headers.set('Access-Control-Allow-Headers', 'Content-Type, x-api-key');
+    return response;
 }
 
 function isValidApiKey(apiKeyHeader) {
