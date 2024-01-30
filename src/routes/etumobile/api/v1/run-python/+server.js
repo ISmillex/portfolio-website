@@ -11,13 +11,7 @@ const ALLOWED_ORIGINS = ['http://localhost:5173', 'http://localhost:3000'];
 export const OPTIONS = async ({ request }) => {
     const response = new Response(null);
     const origin = request.headers.get('origin');
-
-    if (ALLOWED_ORIGINS.includes(origin)) {
-        response.headers.set('Access-Control-Allow-Origin', origin);
-    }
-
-    response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-    response.headers.set('Access-Control-Allow-Headers', 'Content-Type, x-api-key');
+    setCorsHeaders(response, origin);
 
     return response;
 };
@@ -36,13 +30,7 @@ export const GET = async ({ request, url }) => {
     try {
         const data = await runPythonScript(functionName, Object.values(args));
         let response = successResponse(data);
-
-        if (ALLOWED_ORIGINS.includes(origin)) {
-            response.headers.set('Access-Control-Allow-Origin', origin);
-        }
-
-        response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-        response.headers.set('Access-Control-Allow-Headers', 'Content-Type, x-api-key');
+        setCorsHeaders(response, origin);
 
         return response;
     } catch (error) {
@@ -75,6 +63,15 @@ function runPythonScript(taskName, args = []) {
         });
     });
 }
+
+function setCorsHeaders(response, origin) {
+    if (ALLOWED_ORIGINS.includes(origin)) {
+        response.headers.set('Access-Control-Allow-Origin', origin);
+    }
+    response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    response.headers.set('Access-Control-Allow-Headers', 'Content-Type, x-api-key');
+}
+
 
 
 function isValidApiKey(apiKeyHeader) {

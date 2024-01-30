@@ -1,24 +1,25 @@
+import fs from 'fs';
 import os from 'os';
-import Database from 'better-sqlite3';
+import path from 'path';
 import {API_KEY} from '$env/static/private';
 
-const DB_PATHS = {
-    'darwin': '/Users/archyn/Programming/JavaScript/Svelte/porfolio-website/src/etumobile/database/',
-    'linux': '/home/ubuntu/Programming/portfolio-website/src/etumobile/database/'
-};
 
 const ALLOWED_ORIGINS = ['http://localhost:5173','http://localhost:5174','http://localhost:3000'];
+
+const ALLOWED_PATHS = {
+    "darwin": "/Users/archyn/Programming/JavaScript/Svelte/porfolio-website/src/etumobile/",
+    'linux': '/home/ubuntu/Programming/portfolio-website/src/etumobile/'
+}
 
 export const OPTIONS = async ({ request }) => {
     const response = new Response(null);
     const origin = request.headers.get('origin');
     setCorsHeaders(response, origin);
-
     return response;
 };
 
 export const GET = async ({ request, url }) => {
-    const { query, params ,database_name} = getQueryParams(url);
+    const file_path = url.searchParams.get('file_path');
     const apiKeyHeader = request.headers.get('x-api-key');
     const origin = request.headers.get('origin');
 
@@ -26,36 +27,26 @@ export const GET = async ({ request, url }) => {
         return unauthorizedResponse();
     }
 
-    console.log(query, params, database_name)
     try {
-        const data = await executeSqlQuery(query, params, database_name);
-        let response = successResponse(data);
+        const sanitized_path = sanitizePath(file_path);
+        const data = fs.readFileSync(sanitized_path);
+        let response = new Response(data, { status: 200 });
+        response.headers.set('Content-Type', 'application/octet-stream');
+        response.headers.set('Content-Disposition', `attachment; filename=${path.basename(sanitized_path)}`);
         setCorsHeaders(response, origin);
-
         return response;
     } catch (error) {
         return errorResponse(error);
     }
 };
 
-
-
-function executeSqlQuery(query, params, database_name) {
-    const DB_PATH = DB_PATHS[os.platform()] + database_name;
-    const db = new Database(DB_PATH, { verbose: console.log });
-    const stmnt = db.prepare(query);
-    return stmnt.all(params);
-}
-
-function getQueryParams(url) {
-    const query = url.searchParams.get('query');
-    const params = url.searchParams.get('params');
-    const database_name = url.searchParams.get('database_name');
-    return {
-        query: query,
-        params: params ? params.split(',') : [],
-        database_name: database_name
-    };
+function sanitizePath(file_path) {
+    let absolute_path = path.resolve(ALLOWED_PATHS[os.platform()], file_path);
+    if (absolute_path.startsWith(ALLOWED_PATHS[os.platform()])) {
+        return absolute_path;
+    } else {
+        throw new Error('Invalid file path');
+    }
 }
 
 function setCorsHeaders(response, origin) {
@@ -65,7 +56,6 @@ function setCorsHeaders(response, origin) {
     response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
     response.headers.set('Access-Control-Allow-Headers', 'Content-Type, x-api-key');
 }
-
 
 function isAuthorized(apiKeyHeader) {
     return apiKeyHeader && apiKeyHeader === API_KEY;
