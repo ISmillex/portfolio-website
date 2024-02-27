@@ -1,6 +1,6 @@
 <script>
 	import Scroll from './scroll.svelte';
-	import TagCloud from '../animations/TagCloud/TagCloud.svelte';
+	import TagCloud from '../components/tag-cloud.svelte';
 
 	// function handleClick() {
 	// 	document.body.scrollIntoView();

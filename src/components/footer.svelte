@@ -25,7 +25,7 @@
 		<div class="content-2">
 			<div class="title" style="color: {color}">Current status</div>
 			<div class="main-text" style="color: {secondaryColor}">
-				Kill them with success and bury them with a smile.
+				One day or day one ?
 			</div>
 		</div>
 		<div class="content-3">

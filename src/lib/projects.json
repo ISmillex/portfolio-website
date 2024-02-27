@@ -1,20 +1,48 @@
 [
   {
     "id": "0",
-    "category": ["#website", " #desktop-app"],
+    "category": ["#mobile-app"],
+    "shortname": "Etumobil",
     "role": "Full Stack Developer",
     "client": "Personal Project",
-    "shortname": "Grovio App",
-    "name": "Grovio Music Application",
+    "name": "Etumobil Mobile Application",
     "startDate": "2023",
     "endDate": "now",
-    "link": "https://github.com/ISmillex/grovio",
+    "link": "https://github.com/ISmillex/etumobil",
     "linkName": "Github",
-    "shortDescription": "Grovio is a web application that simplifies the process of accessing music from various streaming services. By converting links from different platforms into YouTube music links, Grovio enables seamless music streaming and downloading. With its user-friendly interface, customizable options, and a modern in-app player, Grovio provides a streamlined and enjoyable music experience for users across desktop and mobile platforms.",
-    "description": "Grovio is a web application developed using Svelte Kit, designed to streamline the process of accessing and enjoying music from various streaming services. It offers users a seamless experience by converting links from popular platforms such as Spotify, YouTube Music, Deezer, Apple Music, Tidal, Amazon Music, AudioMack, Qobuz, Napster, and more into YouTube music links. This conversion allows users to effortlessly stream and download their desired music using the YouTube InnerTube API. Grovio goes beyond simple conversion, providing additional functionalities like the downloading of track metadata and lyrics, customizable user interface options, and a modern in-app music player for an enhanced listening experience. The platform's responsive design ensures a consistent and user-friendly experience across desktop and mobile devices."
+    "shortDescription": "Etumobil is a feature-rich mobile application designed for TOBB ETU students, offering seamless access to essential academic resources and tools. With its user-friendly interface and advanced data integration capabilities, Etumobil simplifies academic management, enabling students to effortlessly navigate schedules, track GPA, access course information, and communicate efficiently with faculty and peers.",
+    "description": "Etumobil is a mobile app made for TOBB ETU students, using Svelte Kit and Capacitor Js. It's meant to help students with their academics, providing features for easy navigation and convenience. The app has a simple interface, making it easy for students to access and organize important information like lesson schedules, course details, GPA tracking, and communication tools.\n\nEtumobil uses a strong data fetching system to gather accurate and timely data from TOBB ETU web sources, ensuring students have the latest and reliable information for their academic needs. The app is designed to simplify academic tasks, making student life more straightforward and productive. It aims to be a helpful tool for TOBB ETU students, leveraging modern technologies to enhance the overall academic experience."
   },
   {
     "id": "1",
+    "category": ["#website"],
+    "shortname": "Portfolio Website",
+    "role": "Full Stack Developer",
+    "client": "Personal Project",
+    "name": "Personal Portfolio Website",
+    "startDate": "2021",
+    "endDate": "2023",
+    "link": "https://github.com/ISmillex/porfolio-website",
+    "linkName": "Github",
+    "shortDescription": "Archyn.com.tr is a portfolio website developed using Svelte Kit, showcasing a captivating blend of intricate animations and a well-curated layout. With a strong emphasis on user experience, it offers an immersive display of the creator's projects, personal insights, and engaging games, ensuring seamless viewing across various devices. The platform invites contributions.",
+    "description": "Archyn.com.tr is a portfolio website built with Svelte Kit. The site has a mix of canvas and Webgl animations, along with a well-structured CSS layout, creating an engaging digital experience. It showcases a variety of projects and achievements, offering insights into the stories behind each one.\n\nDesigned to work smoothly on different devices, Archyn.com.tr ensures an optimal viewing experience for users exploring the creator's work. The roadmap includes plans to add more projects, introduce new games, and enhance visuals for a better user experience.\n\nOpen to contributions from the developer community, Archyn.com.tr encourages collaboration and growth. It's a space where creativity and innovation can thrive, bringing together individuals with shared interests to contribute to and appreciate digital creativity."
+  },
+  {
+    "id": "2",
+    "category": ["#simulation"],
+    "shortname": "ADS-B Flight Tracker",
+    "role": "Full Stack Developer",
+    "client": "Personal Project",
+    "name": "ADS-B Flight Map",
+    "startDate": "2024",
+    "endDate": "now",
+    "link": "https://github.com/ISmillex/adsb-flight-map",
+    "linkName": "Github",
+    "shortDescription": "The ADS-B Flight Map is a web-based application developed using Svelte Kit, offering real-time tracking of aircraft using ADS-B data. With its intuitive interface and comprehensive features, including flight path visualization, aircraft details, and map customization, the application provides an immersive and informative experience for aviation enthusiasts and learners.",
+    "description": "adsb-flight-map stands as an advanced real-time aircraft tracking application, utilizing server-fetched data to dynamically render the positions of aircraft on an interactive 3D map. This application caters to users by allowing them to actively engage with the map, providing real-time insights into the positions and details of all aircraft within the camera's scope. Notable features include the ability to seamlessly select specific aircraft from either the map or a detailed table, offering a wealth of information, including ICAO address, flight identification, aircraft type, transponder code, and more. The interactive 3D map permits users to zoom, rotate, tilt, and pan, enabling exploration of diverse regions and perspectives. Additionally, a robust search functionality allows users to filter aircraft based on various criteria, ensuring a tailored and efficient data view in the accompanying table. The application also facilitates sorting of every column in the table, providing users with the flexibility to organize data based on their preferences. adsb-flight-map emerges as a valuable tool for aviation enthusiasts and professionals alike, offering a comprehensive and dynamic platform for tracking and exploring real-time aircraft data."
+  },
+  {
+    "id": "3",
     "category": ["#website"],
     "shortname": "Laserwar Website",
     "role": "Full Stack Developer",
@@ -27,10 +55,10 @@
     "externalLink": "https://main--illustrious-yeot-c0fcf0.netlify.app/",
     "externalLinkName": "Demo",
     "shortDescription": "laserwar.com.tr is the official website of LASERWAR in Turkey, a leading manufacturer of outdoor and indoor laser tag equipment. The website serves as an informative platform, providing comprehensive details about LASERWAR's products, services, and expertise in the field. With a focus on user experience, the website showcases the latest advancements in the laser tag domain through a modern and responsive design.",
-    "description": "laserwar.com.tr is the official website of LASERWAR in Turkey, a prominent manufacturer of  outdoor and indoor laser tag equipment. The website serves as an informative platform, offering comprehensive details about LASERWAR's products, services, and expertise in the field of laser tag equipment. With a focus on user experience, the website showcases the latest advancements in the laser tag domain, providing detailed information about the features and benefits of their offerings. Through its modern and responsive design, laserwar.com.tr ensures seamless navigation for visitors across various devices. The platform also emphasizes LASERWAR's commitment to customer satisfaction, providing information about their services, including installation, maintenance, and support. Visitors can easily reach out to LASERWAR in Turkey for inquiries and potential collaborations via the provided contact information and communication channels."
+    "description": "laserwar.com.tr is the official website of LASERWAR in Turkey, a  manufacturer of outdoor and indoor laser tag equipment. The website serves as an informative platform, offering comprehensive details about LASERWAR's products, services, and expertise in the field of laser tag equipment. With a focus on user experience, the website showcases the latest advancements in the laser tag domain, providing detailed information about the features and benefits of their offerings. Through its modern and responsive design, laserwar.com.tr ensures seamless navigation for visitors across various devices. The platform also emphasizes LASERWAR's commitment to customer satisfaction, providing information about their services, including installation, maintenance, and support."
   },
   {
-    "id": "2",
+    "id": "4",
     "category": ["#website", " #desktop-app", " #mobile-app"],
     "shortname": "MarkMate Web-App",
     "client": "Personal Project",
@@ -41,10 +69,10 @@
     "link": "https://github.com/ISmillex/markmate",
     "linkName": "Github",
     "shortDescription": "MarkMate.io is a user-friendly online markdown editor built with Svelte Kit, offering real-time preview, customizable themes, and multi-platform compatibility. With extensive markdown support, including math expressions and code blocks, it simplifies content creation. Its seamless cloud integration make it a powerful tool for efficient writing.",
-    "description": "MarkMate.io is a online markdown web application crafted using Svelte Kit, offering a streamlined and intuitive platform for users to seamlessly create and edit content with a comprehensive suite of features. Boasting a clutter-free interface, live preview functionality, and multi-platform compatibility, MarkMate.io empowers writers, developers, and content creators to harness the power of markdown effortlessly. With a focus on user customization, it provides an extensive range of themes, editing modes, and typographic enhancements, enhancing the writing experience. MarkMate.io excels in its support for complex markdown elements, including math expressions and code blocks, along with syntax highlighting, ensuring a versatile and adaptable environment for a diverse range of writing styles. Its integration with popular cloud storage services facilitates seamless document management. As MarkMate.io continues to evolve, it aims to introduce advanced syntax highlighting options, and improved cloud integration capabilities, making it the go-to solution for modern content creation and management needs."
+    "description": "MarkMate.io is a online markdown web application developed using Svelte Kit, offering intuitive platform for users to create and edit content with a comprehensive suite of features. Boasting interface, live preview functionality, and multi-platform compatibility, MarkMate.io suits for writers, developers, and content creators. With a focus on user customization, it provides a range of themes, editing modes, and typographic enhancements. MarkMate.io supports complex markdown elements, including math expressions and code blocks, along with syntax highlighting, ensuring adaptable environment for a range of writing styles. Its integration with popular cloud storage services facilitates document management. As MarkMate.io continues to evolve, it aims to introduce advanced syntax highlighting options, and improved cloud integration capabilities."
   },
   {
-    "id": "3",
+    "id": "5",
     "category": ["#game"],
     "shortname": "Simon FPGA",
     "client": "School Project",
@@ -55,10 +83,10 @@
     "link": "https://github.com/ISmillex/Simon-Game-FPGA",
     "linkName": "Github",
     "shortDescription": "The Simon Game is a classic memory game that challenges players to replicate increasingly complex sequences of lights. The Simon Game FPGA project for Basys3 faithfully recreates this experience, integrating smooth transitions, reliable button input, and informative 7-segment display feedback, all within a collaborative open-source development environment.",
-    "description": "The Simon Game FPGA project, tailored for the Basys3 FPGA development board, is a faithful recreation of the classic memory and cognitive skill-testing game. Designed to engage players in a captivating experience, the game involves generating random sequences of lights and sounds displayed on LEDs, which players must memorize and replicate using the corresponding buttons. With a sophisticated state machine ensuring smooth gameplay transitions, the project showcases seamless integration of button debouncing for reliable player input. The 7-segment displays serve to convey the player's score and highest step reached, fostering an immersive and competitive gaming atmosphere. Created by a dedicated team of developers, including Oruç Çakır, Osman Cesur, and Ömer İlbilgi, this open-source project encourages contributions, adhering to best practices for code quality and readability. The project is distributed under the MIT License, granting users the freedom to modify, distribute, and utilize the code, provided the original license file accompanies any redistributed versions."
+    "description": "The Simon Game FPGA project, developed for the Basys3 FPGA development board, is a recreation of the classic memory and cognitive skill-testing game. The game involves generating random sequences of lights and sounds displayed on LEDs, which players must memorize and replicate using the corresponding buttons. With a sophisticated state machine ensuring smooth gameplay transitions, the project uses button debouncing for reliable player input. The 7-segment displays serve to show player's score and highest step reached. Created by a dedicated team of developers, including Oruç Çakır, Osman Cesur, and Ömer İlbilgi."
   },
   {
-    "id": "4",
+    "id": "6",
     "category": ["#game", " #ai"],
     "role": "Full Stack Developer",
     "client": "Personal Project",
@@ -71,10 +99,10 @@
     "externalLink": "https://archyn.com.tr/game/snake/",
     "externalLinkName": "Play!",
     "shortDescription": "Snake-AI is a 2D game developed using Svelte Kit, delivering an immersive classic snake gameplay experience. It employs an optimized doubly linked list algorithm, ensuring seamless and responsive gameplay as the snake grows. The upcoming version will introduce an AI feature, enhanced graphics, and sound effects, alongside plans for leaderboard integration.",
-    "description": "Snake-AI is a 2D game developed using the Svelte Kit framework, offering a nostalgic and engaging gameplay experience centered around the classic Snake concept. Its user-friendly design ensures a seamless transition between desktop and mobile devices, fostering an immersive gaming experience. Notably, the game leverages a well-optimized doubly linked list algorithm, enabling efficient management of the snake's movements and body, thereby guaranteeing a consistently smooth and responsive gameplay, even as the snake dynamically elongates. While the current version of the game focuses on manual user control, the upcoming version is poised to introduce an advanced AI feature for autonomous gameplay, along with a significant overhaul in graphics and audio effects. Furthermore, the roadmap for future iterations entails plans for integrating a leaderboard and achievements system, as well as incorporating multiplayer support and additional game modes and levels. With its commitment to seamless performance and a user-centric approach, Snake-AI invites contributions from developers interested in enriching the game's functionality and features, thereby fostering a vibrant and collaborative community around this exciting project."
+    "description": "Snake-AI is a 2D game crafted with the Svelte Kit, featuring a design that caters to users on both desktop and mobile devices. The game is notable for its use of a finely-tuned doubly linked list algorithm, ensuring the effective handling of the snake's movements and body.\n\nIn its current iteration, Snake-AI centers around manual user control, but an upcoming version is set to introduce an advanced AI feature for autonomous gameplay. This update will coincide with a significant revamp in graphics and audio effects, enhancing the overall gaming experience.\n\nLooking ahead, the roadmap for future iterations includes exciting plans such as the integration of a leaderboard and achievements system. Additionally, the developers aim to incorporate multiplayer support, adding a social and competitive dimension to the Snake-AI gaming experience."
   },
   {
-    "id": "5",
+    "id": "7",
     "category": ["#game", " #ai"],
     "role": "Full Stack Developer",
     "client": "Personal Project",
@@ -88,10 +116,10 @@
     "externalLink": "https://archyn.com.tr/game/tetris/",
     "externalLinkName": "Play!",
     "shortDescription": "Tetris-Ai is a contemporary rendition of the classic 2D Tetris game, offering a seamless and engaging experience across various platforms. While focusing on delivering an intuitive user interface and smooth gameplay, the project plans to integrate an AI feature, enhancing the challenge and competitiveness of the game. Built on the Svelte Kit framework, Tetris-Ai ensures efficient rendering and optimized game mechanics, providing a captivating and nostalgic gaming experience for enthusiasts and casual players alike.",
-    "description": "Tetris-Ai is an immersive and modern take on the beloved 2D Tetris game, designed with an emphasis on delivering a captivating user experience across various platforms. Combining the timeless appeal of Tetris with a sleek and responsive interface, the game offers an engaging journey of skillful manipulation and strategic thinking. Built upon the robust Svelte Kit framework, Tetris-Ai ensures not only an aesthetically pleasing design but also seamless gameplay mechanics, optimized for swift rendering and minimal lag, even on devices with limited processing power. With a meticulous approach to time and space complexity, the game guarantees a fluid and uninterrupted gaming experience, allowing players to focus on the exhilarating challenge of maneuvering descending Tetrominoes to clear lines. As the project sets its sights on integrating an AI component, the vision is to provide an added layer of competitiveness and depth, inviting players to delve into an evolving and dynamic Tetris environment that encourages both casual enjoyment and strategic mastery."
+    "description": "Tetris-Ai is a modern twist on the classic 2D Tetris game, designed to work smoothly on both desktop and mobile devices. It's built using Svelte Kit, ensuring a good-looking design and smooth gameplay, even on less powerful devices. The game is all about making sure it runs well and doesn't lag, so players can focus on the fun of moving Tetrominoes and clearing lines.\n\nThe project has plans to add an AI component, aiming to make the game more competitive and interesting. This means players can enjoy a changing and dynamic Tetris experience that caters to both casual players and those looking to master the game strategically. Tetris-Ai is about blending nostalgic gameplay with modern features for an enjoyable experience."
   },
   {
-    "id": "6",
+    "id": "8",
     "category": ["#game", " #ai"],
     "role": "Full Stack Developer",
     "client": "Personal Project",
@@ -105,10 +133,24 @@
     "externalLink": "https://archyn.com.tr/game/2048/",
     "externalLinkName": "Play!",
     "shortDescription": "2048-AI is a 2D puzzle game developed using Svelte Kit, where players merge tiles to achieve the elusive 2048 tile. Despite the current lack of an AI feature, the game offers a sleek, responsive design for an immersive gaming experience on various devices. With plans to integrate an AI system, players can anticipate an even more stimulating gameplay experience with enhanced strategic capabilities and decision-making.",
-    "description": "2048-AI is an immersive gaming experience crafted on the foundation of Svelte Kit, offering players an engaging journey through the exhilarating world of numerical tile merging. The game's central challenge lies in strategically combining tiles of matching values, aiming to reach the coveted 2048 tile. Sporting an elegantly designed interface, meticulously tailored for both mobile and desktop users, the game ensures a seamless and visually captivating experience. While the current version stands as a testament to seamless design and user-friendly controls, the anticipation mounts for the upcoming integration of an AI system, promising to revolutionize the gameplay by providing players with enhanced strategic insights and decision-making capabilities. As the integration of the AI approaches, players can look forward to a heightened sense of accomplishment and excitement, driven by the prospect of conquering the intricate puzzles with greater precision and skill."
+    "description": "2048-AI is a engaging game created using Svelte Kit, offering players a challenging experience in combining numerical tiles to reach the coveted 2048 tile. The game features a well-designed interface for both mobile and desktop users, ensuring a smooth and visually appealing experience. The current version prioritizes user-friendly controls and seamless design.\n\nAnticipation is building for the upcoming integration of an AI system, set to enhance gameplay by providing players with improved strategic insights and decision-making capabilities. This addition aims to increase the sense of accomplishment and excitement for players as they navigate through complex puzzles with greater precision and skill. The evolving landscape of 2048-AI promises a more enriching and challenging gaming experience, encouraging players to engage and master the game."
   },
   {
-    "id": "7",
+    "id": "9",
+    "category": ["#website", " #desktop-app"],
+    "role": "Full Stack Developer",
+    "client": "Personal Project",
+    "shortname": "Grovio App",
+    "name": "Grovio Music Application",
+    "startDate": "2023",
+    "endDate": "now",
+    "link": "https://github.com/ISmillex/grovio",
+    "linkName": "Github",
+    "shortDescription": "Grovio is a web application that simplifies the process of accessing music from various streaming services. By converting links from different platforms into YouTube music links, Grovio enables seamless music streaming and downloading. With its user-friendly interface, customizable options, and a modern in-app player, Grovio provides a streamlined and enjoyable music experience for users across desktop and mobile platforms.",
+    "description": "Grovio is a web application developed using Svelte Kit, developed to streamline the process of accessing and enjoying music from various streaming services. It offers users feature of converting links from popular platforms such as Spotify, YouTube Music, Deezer, Apple Music, Tidal, Amazon Music, AudioMack, Qobuz, Napster, and more into YouTube music links. This conversion allows users to effortlessly stream and download their desired music using the YouTube InnerTube API. Grovio also have additional functionalities like the downloading of track metadata and lyrics, customizable user interface options, and a modern in-app music player. The platform's responsive design ensures a consistent and user-friendly experience across desktop and mobile devices."
+  },
+  {
+    "id": "10",
     "category": ["#tool"],
     "shortname": "Maze Visualizer",
     "role": "Full Stack Developer",
@@ -119,38 +161,10 @@
     "link": "https://github.com/ISmillex/maze-visualizer",
     "linkName": "Github",
     "shortDescription": "The Maze Visualizer is a user-friendly web tool built with Svelte Kit, enabling the generation and solving of mazes using various algorithms. It offers an interactive interface for users to visualize the maze creation and solution process, catering to both desktop and mobile platforms. With support for a diverse range of algorithms, it provides a seamless and engaging experience for maze enthusiasts and learners alike.",
-    "description": "The Maze Visualizer is a  web-based tool that leverages the power of Svelte Kit to deliver an immersive and educational experience in maze generation and solving. This sophisticated application offers users an opportunity to explore the intricacies of various maze generation algorithms, including the Recursive Backtracker, Prim's Algorithm, Kruskal's Algorithm, Eller's Algorithm, Wilson's Algorithm, Hunt and Kill Algorithm, Binary Tree Algorithm, Sidewinder Algorithm, Aldous-Broder Algorithm, and Growing Tree Algorithm. Additionally, it provides a comprehensive set of maze solving algorithms, such as Depth-First Search (DFS), Breadth-First Search (BFS), A* Search, Dijkstra's Algorithm, Wall Follower (Left Hand Rule, Right Hand Rule), Trémaux's Algorithm, Dead-end filling Algorithm, Pledge Algorithm, Flood Fill Algorithm, and Bellman-Ford Algorithm. The application's intuitive interface allows users to visualize the maze generation and solving processes in real time, fostering a deeper understanding of the underlying concepts. With a focus on seamless user interaction, the Maze Visualizer ensures optimal performance and responsiveness on both desktop and mobile platforms, catering to a diverse range of users, from maze enthusiasts to educational institutions and beyond."
+    "description": "The Maze Visualizer is a web tool made with Svelte Kit for interactive maze generation and solving. Users can explore various algorithms for maze creation and solving, including Recursive Backtracker, Prim's Algorithm, Kruskal's Algorithm, Eller's Algorithm, Wilson's Algorithm, Hunt and Kill Algorithm, Binary Tree Algorithm, Sidewinder Algorithm, Aldous-Broder Algorithm, and Growing Tree Algorithm. It also features maze-solving algorithms like Depth-First Search (DFS), Breadth-First Search (BFS), A* Search, Dijkstra's Algorithm, Wall Follower (Left Hand Rule, Right Hand Rule), Trémaux's Algorithm, Dead-end filling Algorithm, Pledge Algorithm, Flood Fill Algorithm, and Bellman-Ford Algorithm.\n\nThe user-friendly interface allows real-time visualization of maze generation and solving processes, promoting better understanding. With a focus on smooth interaction, the Maze Visualizer ensures optimal performance on both desktop and mobile platforms, serving maze enthusiasts, educational institutions, and more."
   },
   {
-    "id": "8",
-    "category": ["#mobile-app"],
-    "shortname": "Etumobil",
-    "role": "Full Stack Developer",
-    "client": "Personal Project",
-    "name": "Etumobil Mobile Application",
-    "startDate": "2023",
-    "endDate": "now",
-    "link": "https://github.com/ISmillex/etumobil",
-    "linkName": "Github",
-    "shortDescription": "Etumobil is a feature-rich mobile application designed for TOBB ETU students, offering seamless access to essential academic resources and tools. With its user-friendly interface and advanced data integration capabilities, Etumobil simplifies academic management, enabling students to effortlessly navigate schedules, track GPA, access course information, and communicate efficiently with faculty and peers.",
-    "description": "Etumobil represents a transformative mobile application experience for the dynamic student community at TOBB ETU, blending state-of-the-art technologies like Svelte Kit and Capacitor Js to deliver an all-encompassing academic management solution. Empowering students with an array of features, the app facilitates seamless navigation through their educational journey, offering unparalleled convenience. With its intuitive interface, students can effortlessly access and organize crucial information, including detailed lesson schedules, comprehensive course insights, GPA tracking, and efficient communication tools. Leveraging a robust data fetching mechanism, Etumobil ensures the timely and accurate aggregation of data from various TOBB ETU web sources, guaranteeing the most up-to-date and reliable information for students' academic pursuits. This comprehensive and sophisticated platform serves as an indispensable companion, simplifying academic tasks and fostering a streamlined and productive academic experience."
-  },
-  {
-    "id": "9",
-    "category": ["#website"],
-    "shortname": "Portfolio Website",
-    "role": "Full Stack Developer",
-    "client": "Personal Project",
-    "name": "Personal Portfolio Website",
-    "startDate": "2021",
-    "endDate": "2023",
-    "link": "https://github.com/ISmillex/porfolio-website",
-    "linkName": "Github",
-    "shortDescription": "Archyn.com.tr is a portfolio website developed using Svelte Kit, showcasing a captivating blend of intricate animations and a well-curated layout. With a strong emphasis on user experience, it offers an immersive display of the creator's projects, personal insights, and engaging games, ensuring seamless viewing across various devices. The platform invites contributions.",
-    "description": "Archyn.com.tr represents a striking portfolio website, expertly crafted using Svelte Kit, where innovation meets creativity. The website's exquisite blend of meticulously designed canvas and Webgl animations, complemented by a well-structured CSS layout, creates an immersive digital environment that captivates visitors from the moment they arrive. Showcasing the creator's diverse range of projects and accomplishments, the platform offers a deep dive into the intricacies of their work and the story behind each endeavor. With its seamless responsiveness across multiple devices, Archyn.com.tr ensures an optimal viewing experience, allowing users to explore the creator's journey effortlessly. The platform's roadmap outlines a promising trajectory, with plans to expand the portfolio with more projects, introduce captivating new games, and implement advanced visual enhancements for an even more enchanting user experience. Open to contributions from the developer community, Archyn.com.tr embodies a dynamic space for collaboration and growth, fostering a thriving environment where innovation thrives and creativity knows no bounds."
-  },
-  {
-    "id": "10",
+    "id": "11",
     "category": ["#game"],
     "shortname": "Platformer Game",
     "role": "Full Stack Developer",
@@ -163,10 +177,10 @@
     "externalLink": "https://archyn.com.tr/game/platformer/",
     "externalLinkName": "Play!",
     "shortDescription": "Platformer is a 2D game developed using Svelte Kit, offering a seamless and engaging experience across various platforms. With a focus on delivering an intuitive user interface and smooth gameplay. Built on the Svelte Kit framework, Platformer ensures efficient rendering and optimized game mechanics, providing a captivating and nostalgic gaming experience for enthusiasts and casual players alike.",
-    "description": "Platformer is a modern take on the beloved 2D platformer game, designed with an emphasis on delivering a captivating user experience across various platforms. Combining the timeless appeal of platformer games with a sleek and responsive interface, the game offers an engaging journey of skillful maneuvering and strategic thinking. Built upon the robust Svelte Kit framework, Platformer ensures not only an aesthetically pleasing design but also seamless gameplay mechanics, optimized for swift rendering and minimal lag, even on devices with limited processing power. With a meticulous approach to time and space complexity, the game guarantees a fluid and uninterrupted gaming experience, allowing players to focus on the exhilarating challenge of navigating the platformer world to reach the end. Inviting players to delve into an evolving and dynamic platformer environment that encourages both casual enjoyment and strategic mastery."
+    "description": "Platformer is a contemporary interpretation of the classic 2D platformer game, aiming to provide an engaging user experience across different platforms. Merging the enduring charm of platformer games with a polished and responsive interface, the game offers a captivating experience of skillful maneuvers and strategic thinking. Developed using Svelte Kit, Platformer prioritizes both visual appeal and smooth gameplay mechanics, ensuring efficient rendering and minimal lag even on less powerful devices. The game's meticulous approach to time and space complexity promises a seamless and uninterrupted gaming experience."
   },
   {
-    "id": "11",
+    "id": "12",
     "category": ["#electronics"],
     "shortname": "Micro Mouse",
     "role": "Circuit Designer",
@@ -177,7 +191,7 @@
     "link": "",
     "linkName": "",
     "shortDescription": "The Speed Micro Mouse is a robot designed to navigate a maze autonomously. With its sophisticated design and advanced features, including a 3D-printed chassis, a custom PCB, and a powerful STM32 microcontroller, the Speed Micro Mouse offers a seamless and engaging experience for enthusiasts and learners alike.",
-    "description": "The Speed Micro Mouse is a robot designed to navigate a maze autonomously. With its sophisticated design and advanced features, including a 3D-printed chassis, a custom PCB, and a powerful STM32 microcontroller, the Speed Micro Mouse offers a seamless and engaging experience for enthusiasts and learners alike. The project's hardware design is centered around the STM32F407VG microcontroller, which serves as the brain of the robot, controlling the motors and sensors. The robot's chassis is 3D-printed, with a custom PCB serving as the base. The PCB is designed to accommodate the microcontroller, motor drivers, and sensors, along with the battery and charging circuitry. The robot's sensors include an MPU6050 accelerometer and gyroscope, a VL53L0X time-of-flight (ToF) distance sensor, and a QTR-8RC line sensor array. The Speed Micro Mouse is a collaborative project, developed by a team of dedicated students, including Oruç Çakır, Osman Cesur, and Ömer İlbilgi, with the goal of participating in the IEEE Turkey Micro Mouse Competition."
+    "description": "The Speed Micro Mouse is an autonomous maze-navigating robot designed to offer an engaging experience for enthusiasts and learners. Featuring advanced components such as a 3D-printed chassis, a custom PCB, and a high-performance STM32 microcontroller, this project is well-suited for those interested in robotics.\n\nThe heart of the robot is the STM32F407VG microcontroller, responsible for controlling motors and sensors. The 3D-printed chassis, along with a custom PCB, forms the foundation of the robot's hardware design. Key sensors include an MPU6050 accelerometer and gyroscope, a VL53L0X time-of-flight (ToF) distance sensor, and a QTR-8RC line sensor array.\n\nThe Speed Micro Mouse is a collaborative effort led by a team of dedicated students, namely Oruç Çakır, Osman Cesur, and Ömer İlbilgi. The project's objective is to participate in the IEEE Turkey Micro Mouse Competition, showcasing innovation and expertise in the field of robotics."
   }
 ]
 

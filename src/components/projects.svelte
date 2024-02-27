@@ -1,6 +1,6 @@
 <script>
 	import projects from "$lib/projects.json"
-	import TypeWritterOnce from "../animations/typeWritterOnce.svelte"
+	import TypeWritterOnce from "../animations/type-writter-once.svelte"
 
 	let selected = 0;
 

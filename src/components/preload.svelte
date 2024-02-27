@@ -99,7 +99,7 @@
 		}
 	}
 
-	@media screen and (max-width: 428px) {
+	@media screen and (max-width: 600px) {
 		.text {
 			font-size: 20px;
 		}

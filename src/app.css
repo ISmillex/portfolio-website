@@ -14,8 +14,7 @@ body {
 /*	cursor: none;*/
 /*}*/
 
-
-@media screen and (max-width: 428px) {
+@media screen and (max-width: 600px) {
 	body {
 		transition: background-color 0.3s ease-in-out;
 	}

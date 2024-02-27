@@ -52,5 +52,7 @@
 
 <div class="typedChars" style="{color}">
     {typedChars}
-    {#if index < currentText.length}<span class="cursor"></span>{/if}
+    {#if index < currentText.length}
+        <span class="cursor"></span>
+    {/if}
 </div>

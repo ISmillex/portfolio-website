@@ -2,7 +2,6 @@
  * TagCloud.js (c) 2016-2019 @ Cong Min
  * MIT License - https://github.com/cong-min/TagCloud
  */
-
 class TagCloud {
     /* constructor */
     constructor(container = document.body, texts, options) {

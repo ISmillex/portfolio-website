@@ -1,7 +1,7 @@
 <script>
-	import StarBackground from '../animations/StarBackground/starBackground.svelte';
-	import TypeWritter from '../animations/typeWritter.svelte';
-	import ParticleText from '../animations/ParticlesText/particlesText.svelte';
+	import StarBackground from '../components/star-background.svelte';
+	import ParticleText from '../components/particles-text.svelte';
+	import TypeWritter from '../animations/type-writter.svelte';
 
 	let innerWidth;
 	let innerHeight;
@@ -15,8 +15,6 @@
 		posMoonLight.x = (event.x - innerWidth) / 50;
 		posMoonLight.y = (event.y - innerHeight) / 50;
 	}
-
-
 
 
 </script>
@@ -208,7 +206,7 @@
 	}
 
 
-	@media screen and (max-width: 428px) {
+	@media screen and (max-width: 600px) {
 		.home {
 			min-height: -webkit-fill-available;
 			min-height: -moz-fill-available;

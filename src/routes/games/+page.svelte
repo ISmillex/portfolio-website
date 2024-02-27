@@ -185,25 +185,39 @@
         opacity: 1;
     }
 
-    .game.showSnake:hover {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/games/snake.png');
-        transform: scale(1.02);
+    #game1 {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/games/snake.png');
     }
 
-    .game.showTetris:hover {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/games/tetris.png');
-        transform: scale(1.02);
+    #game2 {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/games/tetris.png');
     }
 
-    .game.show2048:hover {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/games/2048_@.png');
-        transform: scale(1.02);
+    #game3 {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/games/2048_@.png');
+    }
+
+    #game4 {
+        background-image: none;
     }
 
     .showPlatform:hover {
-        background-image: none;
         transform: scale(1.02);
     }
+
+    .showSnake:hover {
+        transform: scale(1.02);
+    }
+
+    .showTetris:hover {
+        transform: scale(1.02);
+    }
+
+    .show2048:hover {
+        transform: scale(1.02);
+    }
+
+
 
     .game .date {
         position: absolute;
@@ -222,7 +236,7 @@
     }
 
 
-    @media only screen and (max-width: 428px) {
+    @media only screen and (max-width: 600px) {
         .game {
             width: 400px;
             height: 500px;

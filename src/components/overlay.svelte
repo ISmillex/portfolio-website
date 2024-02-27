@@ -12,14 +12,14 @@
 <div class="overlay" class:overlayOpen={$stores.isOverlayOpen}>
     <div class="wrapper" class:opacity={$stores.isOverlayOpen}>
         <div class="text-1">MENU</div>
-        <a href="about" class="link" on:click={handleClick} >About me</a>
-        <a href="projects" class="link" on:click={handleClick} >Projects</a>
-        <a href="donate" class="link" on:click={handleClick} >Donate</a>
-        <a href="games" class="link" on:click={handleClick} >Games</a>
-        <a href="contact" class="link" on:click={handleClick} >Contact</a>
+        <a href="/about" class="link" on:click={handleClick} >About me</a>
+        <a href="/projects" class="link" on:click={handleClick} >Projects</a>
+        <a href="/donate" class="link" on:click={handleClick} >Donate</a>
+        <a href="/games" class="link" on:click={handleClick} >Games</a>
+        <a href="/contact" class="link" on:click={handleClick} >Contact</a>
     </div>
     <div class="text-2" class:opacity={$stores.isOverlayOpen}>
-        © 2022 Archyn Mikhailov. Made with ♥ in Ankara, Turkey.
+        © 2024 Archyn Mikhailov. Made with ♥ in Ankara, Turkey.
     </div>
 </div>
 

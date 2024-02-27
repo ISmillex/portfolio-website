@@ -96,7 +96,7 @@
     }
 
 
-    @media screen and (max-width: 428px) {
+    @media screen and (max-width: 600px) {
         section {
             right: 15px;
             width: 35px;

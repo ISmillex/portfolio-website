@@ -1,5 +1,5 @@
 <script>
-	import Slider from '../../animations/slider.svelte'
+	import Slider from '../../components/slider.svelte'
 	import {onMount} from "svelte";
 
 	let show = true;
@@ -109,7 +109,7 @@
 			<p class="text">I'm deeply passionate about several interests. Foremost, I'm an enthusiastic crafter. With a meticulous eye for detail, I derive immense satisfaction when crafting tools and items, especially those crafted from wood and leather.</p>
 			<p class="sub-text">Currently, my focus lies in the intricate world of leatherwork, creating pieces that are both aesthetically pleasing and practical.</p>
 		</section>
-		<Slider photos={["/about-slider-hobby/1.jpg", "/about-slider-hobby/2.jpg", "/about-slider-hobby/3.jpg","/about-slider-hobby/4.jpg","/about-slider-hobby/6.jpg","/about-slider-hobby/5.jpg"]}/>
+		<Slider photos={["/about-slider-hobby/1.jpg", "/about-slider-hobby/2.jpg", "/about-slider-hobby/3.jpg","/about-slider-hobby/4.jpg","/about-slider-hobby/6.jpg","/about-slider-hobby/5.jpg", "/about-slider-hobby/7.jpg", "/about-slider-hobby/8.jpg", "/about-slider-hobby/11.jpg", "/about-slider-hobby/9.jpg", "/about-slider-hobby/10.jpg"]}/>
 		<section style="margin-bottom: 15vw">
 			<h2 class="title">Sports</h2>
 			<p class="text">In addition to my creative pursuits, swimming has been an integral part of my life since I was 7 years old. With an impressive 13 years of experience, it remains an important source of physical fitness and a testament to my personal discipline. This journey continues to shape my character and instill valuable life lessons, both in and out of the water.</p>
@@ -136,7 +136,7 @@
 	}
 
 	.wrapper {
-		width: 80%;
+		width: 100%;
 		height: 100%;
 		display: flex;
 		flex-direction: column;
@@ -158,14 +158,13 @@
 	}
 
 	section {
-		width: 100%;
+		width: 80%;
 		height: fit-content;
 		display: flex;
-		margin-top: 5vw;
-		margin-bottom: 8vw;
 		flex-direction: column;
 		align-items: center;
 		text-align: center;
+		margin: 5vw auto 8vw;
 	}
 
 	.title {
@@ -321,7 +320,7 @@
 
 	}
 
-	@media screen and (max-width: 428px){
+	@media screen and (max-width: 600px){
 		.wrapper {
 			width: 90%;
 		}

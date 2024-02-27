@@ -1,5 +1,5 @@
 <script>
-    import TagCloud from './TagCloud.js';
+    import TagCloud from '../animations/tag-cloud.js';
     import { onMount } from 'svelte';
 
     let texts;
@@ -19,19 +19,18 @@
             'Matlab',
             'Git',
             'JavaScript',
-            'TypeScript',
             'CSS',
             'Python',
             'Kotlin',
             'Shell',
             'C',
-            'Rust',
             'Java',
             'Verilog',
             'HTML',
             'JSON',
             'SvelteJS',
             "TauriJS",
+            "CapacitorJS",
             'SQL',
             'REST'
         ];

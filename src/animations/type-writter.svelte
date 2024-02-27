@@ -64,5 +64,7 @@
 
 </style>
 
-<div class="typedChars">{typedChars}<span class="cursor"></span></div>
+<div class="typedChars">{typedChars}
+    <span class="cursor"></span>
+</div>
 

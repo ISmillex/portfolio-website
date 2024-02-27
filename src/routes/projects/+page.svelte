@@ -7,6 +7,7 @@
 
 
     let swiper;
+    let slides_count;
 
     onMount(() => {
         $stores.swiper = new Swiper(".swiper", {
@@ -15,7 +16,7 @@
             on: {
                 slideChange: function () {
                     $stores.currentProjectIndex = this.realIndex
-                    console.log($stores.currentProjectIndex)
+                    slides_count = this.slides.length;
                     focusCurrentProject(false);
                 },
             }
@@ -69,6 +70,11 @@
     </section>
     <section >
         <div class="swiper" bind:this={swiper}>
+            <div class="pagination">
+                {#each Array(slides_count) as _, i}
+                    <span class="pagination_item" style="opacity: {i ===  $stores.currentProjectIndex ? 1 : 0.4}" on:click={() => changeSlide(i)}> . </span>
+                {/each}
+            </div>
             <div class="swiper-wrapper">
                 {#each projects as project}
                     <div class="swiper-slide">
@@ -127,6 +133,25 @@
         justify-content: center;
         align-items: center;
         margin: auto;
+    }
+
+    .pagination {
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        display: flex;
+        font-size: 45px;
+        color: black;
+        z-index: 100;
+        transform: translateX(-50%);
+    }
+
+    .pagination_item {
+        cursor: pointer;
+    }
+
+    .pagination_item:not(:last-child) {
+        margin-right: 10px;
     }
 
 
@@ -231,12 +256,12 @@
         height: 100%;
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: flex-end;
     }
 
     .container {
         width: 80%;
-        height: 80%;
+        height: 70%;
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
@@ -244,7 +269,7 @@
 
     .project-info {
         width: 50%;
-        height: 100%;
+        height: fit-content;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -275,7 +300,7 @@
     }
     .project-description {
         width: 50%;
-        height: 100%;
+        height: fit-content;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -301,7 +326,7 @@
         }
     }
 
-    @media screen and (max-width: 428px){
+    @media screen and (max-width: 600px){
         .text-content {
             margin-top: 20%;
         }
@@ -317,6 +342,15 @@
 
         .swiper-slide {
             margin-top: 10%;
+        }
+
+        .pagination {
+            font-size: 35px;
+            top: 5%;
+        }
+
+        .pagination_item:not(:last-child) {
+            margin-right: 5px;
         }
 
 
